@@ -2,9 +2,8 @@
 
 class SignupPage {
 
-    go () {
-        cy.viewport(1440, 900)
-        cy.visit('https://buger-eats.vercel.app')
+    go() {
+        cy.visit('/')
 
         cy.get('a[href="/deliver"]').click()
         cy.get('#page-deliver form h1').should('have.text', 'Cadastre-se para  fazer entregas')
@@ -27,7 +26,7 @@ class SignupPage {
 
         cy.contains('.delivery-method li', deliver.delivery_method).click()
         cy.get('input[accept^="image"]').attachFile('/images/' + deliver.cnh)
-           
+
     }
     submit() {
         cy.get('form button[type="submit"]').click()
@@ -35,13 +34,13 @@ class SignupPage {
 
     modalContentShouldBe(expectedMessage) {
         cy.get('.swal2-container .swal2-html-container')
-                .should('have.text', expectedMessage)
+            .should('have.text', expectedMessage)
     }
 
     alertMessageShoulBe(expectedMessage) {
         cy.get('.alert-error').should('have.text', expectedMessage)
-                    
-}
+
+    }
 
 }
 
