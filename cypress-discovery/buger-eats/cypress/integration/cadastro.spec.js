@@ -13,12 +13,26 @@ describe('cadastro', ()=>{
             cpf: '012458247521',
             email: 'joaodasilva@bol.com.br',
             whatsapp:'21742854783',
+            endereco: {
+                cep: '24120191',
+                rua: 'Alameda São Boaventura',
+                numero: '1000',
+                complemento: 'apto 1050',
+                bairro: 'Fonseca',
+                cidade_uf: 'Niterói/RJ'
+
+            }
         }
 
             cy.get('input[ name="name"]').type(entregador.nome)
             cy.get('input[ name="cpf"]').type(entregador.cpf)
             cy.get('input[ name="email"]').type(entregador.email)
             cy.get('input[ name="whatsapp"]').type(entregador.whatsapp)
+
+            cy.get('input[name="postalcode"]').type(entregador.endereco.cep)
+            cy.get('input[type=button][value="Buscar CEP"]').click()
+            cy.get('input[name="address-number"]').type(entregador.endereco.numero)
+            cy.get('input[name="address-details"]').type(entregador.endereco.complemento)
         })
 
     })
