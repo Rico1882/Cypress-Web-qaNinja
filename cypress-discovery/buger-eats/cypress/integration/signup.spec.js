@@ -1,5 +1,6 @@
 import SignupFatory from '../factories/SignupFatory'
 import signup from '../pages/SignupPage'
+import signupPage from '../pages/SignupPage'
 
 describe('Signup', () => {
 
@@ -45,6 +46,17 @@ describe('Signup', () => {
         signup.alertMessageShoulBe('Oops! Email com formato inválido.')
     })
 
+    it.only('Require fields', function(){
+        signupPage.go()
+        signupPage.submit()
+        signupPage.alertMessageShoulBe('É necessário informar o nome')
+        signupPage.alertMessageShoulBe('É necessário informar o CPF')
+        signupPage.alertMessageShoulBe('É necessário informar o email')
+        signupPage.alertMessageShoulBe('É necessário informar o CEP')
+        signupPage.alertMessageShoulBe('É necessário informar o número do endereço')
+        signupPage.alertMessageShoulBe('Selecione o método de entrega')
+        signupPage.alertMessageShoulBe('Adicione uma foto da sua CNH')
+    } )
 })
 
 
