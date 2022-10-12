@@ -1,6 +1,23 @@
 import SignupPage from '../pages/SignupPage'
 
 describe('cadastro', ()=>{
+
+    before(function() {
+        cy.log('Tudo aqui é executado uma única vez ANTES de TODOS os cados de testes')
+    })
+
+    beforeEach(function(){
+        cy.log('Tudo aqui é executado sempre ANTES de CADA caso de teste')
+    })
+
+    after(function() {
+        cy.log('Tudo aqui é executado uma única vez DEPOIS de TODOS os cados de testes')
+    })
+
+    afterEach(function(){
+        cy.log('Tudo aqui é executado sempre ANTES de CADA caso de teste')
+    })
+
     it('Usuário deve ser tornar um entregador', ()=>{
         cy.viewport(1440, 900)
         cy.visit('https://buger-eats.vercel.app')
