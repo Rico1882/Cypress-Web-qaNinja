@@ -31,5 +31,22 @@
             },
             "delivery_method": "Moto",
             "cnh": "cnh-digital.jpg"
+    },
+
+    "email_inv":{
+        "name": "João Ricardo",
+            "cpf": "00942438592",
+            "email": "joaodasilva.com.br",
+            "whatsapp": "21742854783",
+            "address": {
+                "postalcode": "24120191",
+                "street": "Alameda São Boaventura",
+                "number": "1000",
+                "details": "apto 1050",
+                "district": "Fonseca",
+                "city_state": "Niterói/RJ"
+            },
+            "delivery_method": "Moto",
+            "cnh": "cnh-digital.jpg"
+        }
     }
-}
